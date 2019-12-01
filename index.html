@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CryptoCoin</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-app-bar app  color="blue darken-2" dark>
+        <v-toolbar-title>CryptoCoin</v-toolbar-title>
+      </v-app-bar>
+      
+      <v-content>
+        <div class="wrapper">
+          <v-toolbar-title style="margin-bottom: 20px;">Курсы криптовалют</v-toolbar-title>
+          <div class="coin">
+            <div>
+              <div class="wrapper_coin">
+                <img src="https://m.myfin.by/images/cryptoCurrency/btc.png" alt="BTC" class="iconcoin">
+                <div class="namecoin">Bitcoin(BTC)</div>
+              </div>
+            </div>
+            <div class="pricecoin">
+              <ul>
+                <div class="path">Курс:</div>
+                <li>USD: {{price.BTC.USD}}</li>
+                <li>EUR: {{price.BTC.EUR}}</li>
+                <li>RUB: {{price.BTC.RUB}}</li>
+              </ul>
+            </div>
+          </div>
+          <v-expansion-panels class="infocoin">
+            <v-expansion-panel>
+              <v-expansion-panel-header>Информация о Bitcoin(BTC)</v-expansion-panel-header>
+              <v-expansion-panel-content>
+                Bitcoin (тикер BTC) — самая популярная в мире цифровая валюта, первый выпуск которой состоялся в 2009 году
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <line-chart :chart-data="chartDataBTC"></line-chart>
+        </div>
+
+        <div class="wrapper">
+          <div class="coin">
+            <div>
+              <div class="wrapper_coin">
+                <img src="https://m.myfin.by/images/cryptoCurrency/eth.png" alt="ETH" class="iconcoin">
+                <div class="namecoin">Ethereum(ETH)</div>
+              </div>
+            </div>
+            <div class="pricecoin">
+              <ul>
+                <div class="path">Курс:</div>
+                <li>USD: {{price.ETH.USD}}</li>
+                <li>EUR: {{price.ETH.EUR}}</li>
+                <li>RUB: {{price.ETH.RUB}}</li>
+              </ul>
+            </div>
+          </div>
+          <v-expansion-panels class="infocoin">
+            <v-expansion-panel>
+              <v-expansion-panel-header>Информация о Ethereum(ETH)</v-expansion-panel-header>
+              <v-expansion-panel-content>
+                Эфир (Ethereum) - это цифровая валюта, как и биткоин построенная на основе блокчейн, на которых ведется запись данных о денежных операциях.
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <line-chart :chart-data="chartDataETH"></line-chart>
+        </div>
+
+        <div class="wrapper">
+          <div class="coin">
+            <div>
+              <div class="wrapper_coin">
+                <img src="https://totalcoin.io/uploads/coins/big/xrp.png" alt="XRP" class="iconcoin">
+                <div class="namecoin">Ripple(XRP)</div>
+              </div>
+            </div>
+            <div class="pricecoin">
+              <ul>
+                <div class="path">Курс:</div>
+                <li>USD: {{price.XRP.USD}}</li>
+                <li>EUR: {{price.XRP.EUR}}</li>
+                <li>RUB: {{price.XRP.RUB}}</li>
+              </ul>
+            </div>
+          </div>
+          <v-expansion-panels class="infocoin">
+            <v-expansion-panel>
+              <v-expansion-panel-header>Информация о Ripple(XRP)</v-expansion-panel-header>
+              <v-expansion-panel-content>
+                XRP — это цифровая валюта, входящая в систему расчетов Ripple, созданной компанией Ripple Labs.
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <line-chart :chart-data="chartDataXRP"></line-chart>
+        </div>
+      </v-content>
+    
+      <v-footer dark>Небольшой сайт по курсам криптовалют.</v-footer>
+    </v-app>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
